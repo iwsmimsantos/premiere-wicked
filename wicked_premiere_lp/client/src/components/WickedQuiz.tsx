@@ -187,7 +187,7 @@ export default function WickedQuiz() {
   const shareResult = () => {
     if (result) {
       const text = `🧙‍♀️ Descobri que sou ${result.character} no quiz de Wicked!\n\nDescubra quem você seria em Wicked e conheça a história de uma fã de desafiar a gravidade! ✨\n\n#EuNaPremiereDeWicked @wickedmusicalbr @universalpicsbr`;
-      const url = "http://wickedquizpremiere-ias.com";
+      const url = typeof window !== 'undefined' ? window.location.href : 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app';
       const fullMessage = `${text}\n\n${url}`;
       
       if (navigator.share) {
