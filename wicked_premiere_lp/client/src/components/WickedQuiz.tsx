@@ -204,28 +204,28 @@ export default function WickedQuiz() {
 
   if (showResult && result) {
     return (
-      <Card className="p-8 md:p-12 text-center bg-card/50 backdrop-blur-sm border-primary/20">
-        <div className="space-y-6">
-          <div className="text-6xl mb-4">
+      <Card className="p-4 sm:p-6 md:p-8 lg:p-12 text-center bg-card/50 backdrop-blur-sm border-primary/20">
+        <div className="space-y-4 sm:space-y-6">
+          <div className="text-4xl sm:text-5xl md:text-6xl mb-4">
             {result.character === "Elphaba" && "🧙‍♀️"}
             {result.character === "Glinda" && "✨"}
             {result.character === "Fiyero" && "🤴"}
             {result.character === "Nessarose" && "👸"}
           </div>
           
-          <h3 className="text-3xl md:text-4xl font-bold text-primary">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary leading-tight">
             {result.title}
           </h3>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {result.description}
           </p>
 
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mt-8">
+          <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 sm:p-6 mt-6 sm:mt-8">
             <p className="text-sm text-muted-foreground mb-2">
               Agora que você descobriu seu personagem...
             </p>
-            <p className="text-lg font-medium text-primary">
+            <p className="text-base sm:text-lg font-medium text-primary">
               Conheça a história de quem merece estar na Première! 💚
             </p>
             <Button
@@ -238,22 +238,22 @@ export default function WickedQuiz() {
             </Button>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 sm:pt-6">
             <Button
               size="lg"
               onClick={shareResult}
-              className="bg-primary hover:bg-primary/90"
+              className="bg-primary hover:bg-primary/90 w-full sm:w-auto"
             >
-              <Share2 className="w-5 h-5 mr-2" />
+              <Share2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Compartilhar Resultado
             </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={resetQuiz}
-              className="border-secondary text-secondary"
+              className="border-secondary text-secondary w-full sm:w-auto"
             >
-              <RotateCcw className="w-5 h-5 mr-2" />
+              <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Fazer Novamente
             </Button>
           </div>
@@ -263,13 +263,13 @@ export default function WickedQuiz() {
   }
 
   return (
-    <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-primary/20">
-      <div className="space-y-6">
-        <div className="flex justify-between items-center mb-6">
+    <Card className="p-4 sm:p-6 md:p-8 lg:p-12 bg-card/50 backdrop-blur-sm border-primary/20">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 sm:mb-6">
           <span className="text-sm text-muted-foreground">
             Pergunta {currentQuestion + 1} de {questions.length}
           </span>
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap">
             {questions.map((_, index) => (
               <div
                 key={index}
@@ -281,18 +281,18 @@ export default function WickedQuiz() {
           </div>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold mb-8">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8 leading-tight">
           {questions[currentQuestion].question}
         </h3>
 
-        <div className="grid gap-4">
+        <div className="grid gap-3 sm:gap-4">
           {questions[currentQuestion].options.map((option, index) => (
             <Button
               key={index}
               variant="outline"
               size="lg"
               onClick={() => handleAnswer(option.character)}
-              className="text-left h-auto py-4 px-6 hover:bg-primary/10 hover:border-primary transition-all"
+              className="text-left h-auto py-3 sm:py-4 px-4 sm:px-6 hover:bg-primary/10 hover:border-primary transition-all text-sm sm:text-base leading-relaxed"
             >
               {option.text}
             </Button>
