@@ -4,6 +4,7 @@ import { Sparkles, Heart, Star } from "lucide-react";
 import WickedQuiz from "@/components/WickedQuiz";
 import WickedGallery from "@/components/WickedGallery";
 import CountdownTimer from "@/components/CountdownTimer";
+import WickedGame from "@/components/WickedGame";
 
 export default function Home() {
   return (
@@ -115,6 +116,26 @@ export default function Home() {
               />
             </div>
           </Card>
+
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground text-sm mb-4">
+              Também disponível no TikTok! 💚
+            </p>
+            <Button 
+              asChild
+              variant="outline"
+              className="border-secondary text-secondary hover:bg-secondary/10"
+            >
+              <a 
+                href="https://vm.tiktok.com/ZMApMC4mn/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <span className="text-lg mr-2">🎵</span>
+                Assista no TikTok
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -138,6 +159,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Game Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background" />
+        
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Wicked <span className="text-primary">Memory!</span> 🧠✨
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Teste sua memória com os personagens e elementos mágicos de Wicked!
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <WickedGame />
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
       <section id="story" className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background" />
@@ -146,6 +187,9 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-secondary/20">
               <div className="prose prose-invert prose-lg max-w-none">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-primary">
+                  Indo a fundo na minha história...
+                </h2>
                 <p className="text-lg leading-relaxed mb-6 first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left">
                   Eu tinha sete anos quando vi a Ariana Grande pela primeira vez. Era em Brilhante Victorious, e eu lembro de pensar: "Ela é diferente". Não era só o cabelo vermelho da Cat Valentine, era a forma como ela cantava, como ela brilhava. Eu não sabia ainda, mas aquela menina ia me ensinar a confiar em mim mesma. Anos depois, quando descobri que ela seria a Glinda em Wicked, eu senti que o universo estava me dizendo algo. Era como se a menina que me ensinou a sonhar estivesse me levando para um lugar ainda mais mágico.
                 </p>
@@ -232,16 +276,14 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-2 bg-background/50 rounded-lg p-3">
                 <code className="text-primary flex-1 text-sm break-all">
-                  {typeof window !== 'undefined' ? window.location.href : ''}
+                  http://wickedquizpremiere-ias.com
                 </code>
                 <Button
                   size="sm"
                   variant="outline"
                   onClick={() => {
-                    if (typeof window !== 'undefined') {
-                      navigator.clipboard.writeText(window.location.href);
-                      alert("✅ Link copiado! Cole nas suas redes sociais para me apoiar 💚");
-                    }
+                    navigator.clipboard.writeText("http://wickedquizpremiere-ias.com");
+                    alert("✅ Link copiado! Cole nas suas redes sociais para me apoiar 💚");
                   }}
                 >
                   Copiar
@@ -267,14 +309,18 @@ export default function Home() {
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
                   onClick={() => {
-                    const text = "Conheça a história de quem merece estar na Première de Wicked! 💚\n\n#EuNaPremiereDeWicked @wickedmusicalbr @universalpicsbr";
-                    const url = typeof window !== 'undefined' ? window.location.href : '';
+                    const text = "🧙‍♀️ Descubra quem você seria em Wicked e conheça a história de uma fã de desafiar a gravidade! ✨\n\n#EuNaPremiereDeWicked @wickedmusicalbr @universalpicsbr";
+                    const url = "http://wickedquizpremiere-ias.com";
+                    const fullMessage = `${text}\n\n${url}`;
                     
                     if (navigator.share) {
-                      navigator.share({ title: "Eu na Première de Wicked", text, url });
+                      navigator.share({ 
+                        title: "Descubra quem você seria em Wicked! 🧙‍♀️", 
+                        text: fullMessage
+                      });
                     } else {
-                      navigator.clipboard.writeText(`${text}\n${url}`);
-                      alert("✅ Link copiado! Cole nas suas redes sociais para me apoiar 💚");
+                      navigator.clipboard.writeText(fullMessage);
+                      alert("✅ Mensagem copiada! Cole nas suas redes sociais para me apoiar 💚");
                     }
                   }}
                 >

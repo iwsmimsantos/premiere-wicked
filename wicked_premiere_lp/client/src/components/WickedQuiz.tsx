@@ -186,14 +186,18 @@ export default function WickedQuiz() {
 
   const shareResult = () => {
     if (result) {
-      const text = `Fiz o quiz "Qual personagem de Wicked você é?" e descobri que sou ${result.character}! 💚\n\nDescubra qual personagem você é e conheça a história de quem merece estar na Première de Wicked!\n\n#EuNaPremiereDeWicked`;
-      const url = window.location.href;
+      const text = `🧙‍♀️ Descobri que sou ${result.character} no quiz de Wicked!\n\nDescubra quem você seria em Wicked e conheça a história de uma fã de desafiar a gravidade! ✨\n\n#EuNaPremiereDeWicked @wickedmusicalbr @universalpicsbr`;
+      const url = "http://wickedquizpremiere-ias.com";
+      const fullMessage = `${text}\n\n${url}`;
       
       if (navigator.share) {
-        navigator.share({ title: "Quiz Wicked", text, url });
+        navigator.share({ 
+          title: `Sou ${result.character} no Wicked! 🧙‍♀️`, 
+          text: fullMessage
+        });
       } else {
-        navigator.clipboard.writeText(`${text}\n${url}`);
-        alert("Link copiado! Cole nas suas redes sociais para compartilhar 💚");
+        navigator.clipboard.writeText(fullMessage);
+        alert("✅ Mensagem copiada! Cole nas suas redes sociais para compartilhar 💚");
       }
     }
   };
