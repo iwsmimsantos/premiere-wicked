@@ -276,13 +276,13 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-2 bg-background/50 rounded-lg p-3">
                 <code className="text-primary flex-1 text-sm break-all">
-                  {typeof window !== 'undefined' ? window.location.href : 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app'}
+                  https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app?_vercel_share=zqiRIVMaBvMnwWrJbJhfFzGpSkmX6IPe
                 </code>
                 <Button
                   size="sm"
                   variant="outline"
                   onClick={() => {
-                    const url = typeof window !== 'undefined' ? window.location.href : 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app';
+                    const url = 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app?_vercel_share=zqiRIVMaBvMnwWrJbJhfFzGpSkmX6IPe';
                     navigator.clipboard.writeText(url);
                     alert("✅ Link copiado! Cole nas suas redes sociais para me apoiar 💚");
                   }}
@@ -311,7 +311,7 @@ export default function Home() {
                   className="bg-primary hover:bg-primary/90"
                   onClick={() => {
                     const text = "🧙‍♀️ Descubra quem você seria em Wicked e conheça a história de uma fã de desafiar a gravidade! ✨\n\n#EuNaPremiereDeWicked @wickedmusicalbr @universalpicsbr";
-                    const url = typeof window !== 'undefined' ? window.location.href : 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app';
+                    const url = 'https://premiere-wicked-g8t5-git-main-iasmims-projects-6fec51c7.vercel.app?_vercel_share=zqiRIVMaBvMnwWrJbJhfFzGpSkmX6IPe';
                     const fullMessage = `${text}\n\n${url}`;
                     
                     if (navigator.share) {
