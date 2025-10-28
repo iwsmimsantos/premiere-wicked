@@ -4,11 +4,10 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "build:vercel": "vite build",
+    "dev": "npx vite --host",
+    "build": "npx vite build",
     "start": "NODE_ENV=production node dist/index.js",
-    "preview": "vite preview --host",
+    "preview": "npx vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write ."
   },

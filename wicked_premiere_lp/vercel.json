@@ -1,15 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/public",
-        "buildCommand": "pnpm run build:vercel"
-      }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "framework": "vite",
+  "installCommand": "npm install --legacy-peer-deps",
   "routes": [
     {
       "src": "/(.*)",
